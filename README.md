@@ -15,7 +15,7 @@ It's very important to note that this project is for educational use only. We do
 
 ## Credits
 * [void*](https://github.com/v0idp)
-* [7H3LaughingMan](https://github.com/7H3LaughingMan)
+* [std-nullptr](https://github.com/std-nullptr)
 
 ## Contributing
 
