@@ -30,7 +30,6 @@ void Settings::Load() {
 	Settings::ShowRadar = j["ShowRadar"].get<bool>();
 	Settings::ShowRadar_DeadBodies = j["ShowRadar_DeadBodies"].get<bool>();
 	Settings::ShowRadar_Ghosts = j["ShowRadar_Ghosts"].get<bool>();
-	Settings::ShowRadar_Impostors = j["ShowRadar_Impostors"].get<bool>();
 	Settings::ShowRadar_RightClick_Teleport = j["ShowRadar_RightClick_Teleport"].get<bool>();
 
 	Settings::ChatAlwaysActive = j["ChatAlwaysActive"].get<bool>();
@@ -57,7 +56,6 @@ void Settings::Save() {
 		{"ShowRadar", Settings::ShowRadar},
 		{"ShowRadar_DeadBodies", Settings::ShowRadar_DeadBodies},
 		{"ShowRadar_Ghosts", Settings::ShowRadar_Ghosts},
-		{"ShowRadar_Impostors", Settings::ShowRadar_Impostors},
 		{"ShowRadar_RightClick_Teleport", Settings::ShowRadar_RightClick_Teleport},
 
 		{"ChatAlwaysActive", Settings::ChatAlwaysActive},

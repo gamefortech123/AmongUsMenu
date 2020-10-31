@@ -44,7 +44,6 @@ public:
     bool ShowRadar;
     bool ShowRadar_DeadBodies;
     bool ShowRadar_Ghosts;
-    bool ShowRadar_Impostors;
     bool ShowRadar_RightClick_Teleport;
 
     bool ChatAlwaysActive;

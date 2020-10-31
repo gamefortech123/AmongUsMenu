@@ -3,17 +3,17 @@
 using namespace app;
 
 namespace Radar {
-	ImColor GetRadarPlayerColor(GameData_PlayerInfo* playerData) {
-		return AmongUsColorToImVec4(GetPlayerColor(playerData->fields.ColorId));
+	ImU32 GetRadarPlayerColor(GameData_PlayerInfo* playerData) {
+		return ImGui::ColorConvertFloat4ToU32(AmongUsColorToImVec4(GetPlayerColor(playerData->fields.ColorId)));
 	}
 
-	ImColor GetRadarPlayerColorStatus(GameData_PlayerInfo* playerData) {
+	ImU32 GetRadarPlayerColorStatus(GameData_PlayerInfo* playerData) {
 		if (playerData->fields.IsDead)
-			return AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->HalfWhite);
-		else if (playerData->fields.IsImpostor && State.ShowRadar_Impostors)
-			return AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->ImpostorRed);
+			return ImGui::ColorConvertFloat4ToU32(AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->HalfWhite));
+		else if (playerData->fields.IsImpostor && State.RevealImpostors)
+			return ImGui::ColorConvertFloat4ToU32(AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->ImpostorRed));
 		else
-			return ImColor(0, 0, 0, 0);
+			return ImGui::ColorConvertFloat4ToU32(ImVec4(0, 0, 0, 0));
 	}
 
 	void SquareConstraint(ImGuiSizeCallbackData* data)
@@ -88,8 +88,7 @@ namespace Radar {
 				float radX = maps[MapType].x_offset + (bodyPos.x * maps[MapType].scale) + winpos.x;
 				float radY = maps[MapType].y_offset - (bodyPos.y * maps[MapType].scale) + winpos.y;
 
-				drawList->AddCircleFilled(ImVec2(radX, radY), 4.5F, GetRadarPlayerColor(playerData));
-				drawList->AddCircle(ImVec2(radX, radY), 4.5F + 0.5F, GetRadarPlayerColorStatus(playerData), 0, 2.0F);
+				drawList->AddText(ImGui::GetFont(), 16, ImVec2(radX -5.F, radY - 6.75F), GetRadarPlayerColor(playerData), "X");
 			}
 		}
 
