@@ -5,47 +5,62 @@
 #include <queue>
 #include <optional>
 #include <string>
+#include <sys/stat.h>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
 #include "_rpc.h"
+#include "json.hpp"
 
 using namespace app;
+using json = nlohmann::json;
 
-namespace State
+class Settings
 {
-    extern bool ImGuiInitialized;
-    extern bool ShowMenu;
+private:
+    inline bool Exists(const std::string& name);
 
-    extern std::string CurrentScene;
+public:
+    bool ImGuiInitialized;
+    bool ShowMenu;
 
-    extern bool MaxVision;
-    extern bool PlayerSpeed_Enabled;
-    extern float PlayerSpeed;
-    extern bool UnlockVents;
+    std::string CurrentScene;
 
-    extern bool RevealImpostors;
-    extern bool NoKillTimer;
-    extern bool KillDistance_Enabled;
-    extern int KillDistance;
+    bool MaxVision;
+    bool PlayerSpeed_Enabled;
+    float PlayerSpeed;
+    bool UnlockVents;
 
-    extern bool NoClip;
+    bool RevealImpostors;
+    bool NoKillTimer;
+    bool KillDistance_Enabled;
+    int KillDistance;
 
-    extern uint8_t selectedPlayerId;
-    extern std::queue<RPCInterface*> rpcQueue;
+    bool NoClip;
 
-    extern bool ShowRadar;
-    extern bool ShowRadar_DeadBodies;
-    extern bool ShowRadar_Ghosts;
-    extern bool ShowRadar_Impostors;
-    extern bool ShowRadar_RightClick_Teleport;
+    uint8_t selectedPlayerId;
+    std::queue<RPCInterface*> rpcQueue;
 
-    extern bool ChatAlwaysActive;
-    extern bool ReadGhostMessages;
+    bool ShowRadar;
+    bool ShowRadar_DeadBodies;
+    bool ShowRadar_Ghosts;
+    bool ShowRadar_Impostors;
+    bool ShowRadar_RightClick_Teleport;
 
-    extern bool AutoRepairLights;
-    extern bool AutoRepairReactor;
-    extern bool AutoRepairOxygen;
-    extern bool AutoRepairComms;
+    bool ChatAlwaysActive;
+    bool ReadGhostMessages;
 
-    extern SystemTypes__Enum selectedDoor;
-    extern std::vector<SystemTypes__Enum> mapDoors;
-    extern std::vector<SystemTypes__Enum> pinnedDoors;
-}
+    bool AutoRepairLights;
+    bool AutoRepairReactor;
+    bool AutoRepairOxygen;
+    bool AutoRepairComms;
+
+    SystemTypes__Enum selectedDoor;
+    std::vector<SystemTypes__Enum> mapDoors;
+    std::vector<SystemTypes__Enum> pinnedDoors;
+
+    void Load();
+    void Save();
+};
+
+extern Settings State;

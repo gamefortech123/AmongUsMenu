@@ -83,7 +83,6 @@
     <ClCompile Include="includes\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="includes\imgui\imgui_widgets.cpp" />
     <ClCompile Include="includes\kiero\kiero.cpp" />
-    <ClCompile Include="user\settings.cpp" />
     <ClCompile Include="user\game.cpp" />
     <ClCompile Include="user\main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)framework;$(ProjectDir)imgui;$(ProjectDir)Detours;$(ProjectDir)appdata;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -120,7 +119,6 @@
     <ClInclude Include="includes\imgui\imstb_truetype.h" />
     <ClInclude Include="includes\kiero\kiero.h" />
     <ClInclude Include="includes\json.hpp" />
-    <ClInclude Include="user\settings.hpp" />
     <ClInclude Include="user\game.hpp" />
     <ClInclude Include="user\main.h" />
     <ClInclude Include="user\state.hpp" />

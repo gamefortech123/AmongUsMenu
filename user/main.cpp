@@ -4,8 +4,7 @@ using namespace app;
 
 extern const LPCWSTR LOG_FILE = L"debug.txt";
 
-void Run()
-{
+void Run() {
 #if _DEBUG
 	new_console();
 #endif

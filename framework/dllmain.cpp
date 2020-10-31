@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "il2cpp-init.h"
 #include "main.h"
+#include "state.hpp"
 #if _XINPUT
 #include "x_input.h"
 #endif
@@ -11,6 +12,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	switch (ul_reason_for_call)
 	{
 	case DLL_PROCESS_ATTACH:
+		State.Load();
 		DisableThreadLibraryCalls(hModule);
 		init_il2cpp();
 #if _XINPUT
@@ -20,6 +22,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 #endif
 		break;
 	case DLL_PROCESS_DETACH:
+		State.Save();
 #if _XINPUT
 		FreeLibrary(originalXINPUT);
 #endif

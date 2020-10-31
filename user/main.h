@@ -6,5 +6,6 @@
 #include <iostream>
 #include "game.hpp"
 #include "_hooks.h"
+#include "state.hpp"
 
 void Run();

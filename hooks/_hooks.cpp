@@ -87,9 +87,9 @@ BOOL WINAPI dHWID_W(LPCTSTR lpRootPathName, LPTSTR lpVolumeNameBuffer, DWORD nVo
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	if (uMsg == WM_KEYUP && wParam == VK_DELETE)
-		State::ShowMenu = !State::ShowMenu;
+		State.ShowMenu = !State.ShowMenu;
 
-	if (State::ShowMenu || State::ShowRadar)
+	if (State.ShowMenu || State.ShowRadar)
 		if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 			return true;
 
@@ -98,7 +98,7 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
-	if (!State::ImGuiInitialized)
+	if (!State.ImGuiInitialized)
 	{
 		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice)))
 		{
@@ -120,7 +120,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 			LoadTextures();
 
-			State::ImGuiInitialized = true;
+			State.ImGuiInitialized = true;
 		}
 
 		else
@@ -134,11 +134,11 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGui::NewFrame();
 	ApplyTheme();
 
-	if (State::ShowMenu) {
+	if (State.ShowMenu) {
 		Menu::Render();
 	}
 
-	if (IsInGame() && State::ShowRadar) {
+	if (IsInGame() && State.ShowRadar) {
 		Radar::Render();
 	}
 

@@ -10,7 +10,7 @@ namespace Radar {
 	ImColor GetRadarPlayerColorStatus(GameData_PlayerInfo* playerData) {
 		if (playerData->fields.IsDead)
 			return AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->HalfWhite);
-		else if (playerData->fields.IsImpostor && State::ShowRadar_Impostors)
+		else if (playerData->fields.IsImpostor && State.ShowRadar_Impostors)
 			return AmongUsColorToImVec4(app::Palette__TypeInfo->static_fields->ImpostorRed);
 		else
 			return ImColor(0, 0, 0, 0);
@@ -39,7 +39,7 @@ namespace Radar {
 				((mouse.y - winpos.y - maps[MapType].y_offset) * -1.F) / maps[MapType].scale
 			};
 
-			State::rpcQueue.push(new TeleportRPC((*Game::pLocalPlayer)->fields.PlayerId, target));
+			State.rpcQueue.push(new TeleportRPC((*Game::pLocalPlayer)->fields.PlayerId, target));
 		}
 	}
 
@@ -55,7 +55,7 @@ namespace Radar {
 
 		int MapType = (*Game::pShipStatus)->fields.Type;
 		ImGui::SetNextWindowSize(ImVec2((float)maps[MapType].width * 0.5F + 10, (float)maps[MapType].height * 0.5F + 10), ImGuiCond_Once);
-		ImGui::Begin("Radar", &State::ShowRadar, ImGuiWindowFlags_NoDecoration);
+		ImGui::Begin("Radar", &State.ShowRadar, ImGuiWindowFlags_NoDecoration);
 
 		ImDrawList* drawList = ImGui::GetWindowDrawList();
 
@@ -67,7 +67,7 @@ namespace Radar {
 		for (auto player : GetAllPlayerControl()) {
 			auto playerData = GetPlayerData(player);
 
-			if (!playerData || (!State::ShowRadar_Ghosts && playerData->fields.IsDead))
+			if (!playerData || (!State.ShowRadar_Ghosts && playerData->fields.IsDead))
 				continue;
 
 			Vector2 playerPos = app::PlayerControl_GetTruePosition(player, NULL);
@@ -79,7 +79,7 @@ namespace Radar {
 			drawList->AddCircle(ImVec2(radX, radY), 4.5F + 0.5F, GetRadarPlayerColorStatus(playerData), 0, 2.0F);
 		}
 
-		if (State::ShowRadar_DeadBodies) {
+		if (State.ShowRadar_DeadBodies) {
 			for (auto deadBody : GetAllDeadBodies()) {
 				auto playerData = GetPlayerDataById(deadBody->fields.ParentId);
 
@@ -93,7 +93,7 @@ namespace Radar {
 			}
 		}
 
-		if (State::ShowRadar_RightClick_Teleport)
+		if (State.ShowRadar_RightClick_Teleport)
 			OnClick();
 
 		ImGui::End();

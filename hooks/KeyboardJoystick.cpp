@@ -6,9 +6,9 @@ void dKeyboardJoystick_Update(KeyboardJoystick* __this, MethodInfo* method) {
 	if (IsInGame()) {
 		Menu::UpdateModifiers();
 		
-		if (!State::rpcQueue.empty()) {
-			auto rpc = State::rpcQueue.front();
-			State::rpcQueue.pop();
+		if (!State.rpcQueue.empty()) {
+			auto rpc = State.rpcQueue.front();
+			State.rpcQueue.pop();
 
 			rpc->Process();
 			delete rpc;

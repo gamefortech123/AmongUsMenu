@@ -73,9 +73,6 @@
     <ClCompile Include="includes\imgui\imgui_widgets.cpp">
       <Filter>includes\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="user\settings.cpp">
-      <Filter>user</Filter>
-    </ClCompile>
     <ClCompile Include="hooks\MeetingHud.cpp">
       <Filter>hooks</Filter>
     </ClCompile>
@@ -188,9 +185,6 @@
     </ClInclude>
     <ClInclude Include="includes\signature.hpp">
       <Filter>includes</Filter>
-    </ClInclude>
-    <ClInclude Include="user\settings.hpp">
-      <Filter>user</Filter>
     </ClInclude>
     <ClInclude Include="includes\detours\detours.h">
       <Filter>includes\detours</Filter>

@@ -1,42 +1,74 @@
 #include "state.hpp"
 
-namespace State
-{
-    bool ImGuiInitialized = false;
-    bool ShowMenu = false;
+Settings State;
 
-    std::string CurrentScene;
+const char* pSettings = "settings.json";
 
-    bool MaxVision = false;
-    bool PlayerSpeed_Enabled = false;
-    float PlayerSpeed = 1.F;
-    bool UnlockVents = false;
+inline bool Settings::Exists(const std::string& name) {
+	struct stat buffer;
+	return (stat(name.c_str(), &buffer) == 0);
+}
 
-    bool RevealImpostors = false;
-    bool NoKillTimer = false;
-    bool KillDistance_Enabled = false;
-    int KillDistance = 1;
+void Settings::Load() {
+	if (!Settings::Exists(pSettings))
+		return;
 
-    bool NoClip = false;
+	std::ifstream i(pSettings);
+	json j;
+	i >> j;
 
-    uint8_t selectedPlayerId = 255;
-    std::queue<RPCInterface*> rpcQueue;
+	Settings::ShowMenu = j["ShowMenu"].get<bool>();
 
-    bool ShowRadar = false;
-    bool ShowRadar_DeadBodies = false;
-    bool ShowRadar_Ghosts = false;
-    bool ShowRadar_Impostors = false;
-    bool ShowRadar_RightClick_Teleport = false;
+	Settings::MaxVision = j["MaxVision"].get<bool>();
+	Settings::UnlockVents = j["UnlockVents"].get<bool>();
 
-    bool ChatAlwaysActive = false;
-    bool ReadGhostMessages = false;
+	Settings::RevealImpostors = j["RevealImpostors"].get<bool>();
+	Settings::NoKillTimer = j["NoKillTimer"].get<bool>();
 
-    bool AutoRepairLights = false;
-    bool AutoRepairReactor = false;
-    bool AutoRepairOxygen = false;
-    bool AutoRepairComms = false;
+	Settings::NoClip = j["NoClip"].get<bool>();
 
-    SystemTypes__Enum selectedDoor = SystemTypes__Enum_Hallway;
-    std::vector<SystemTypes__Enum> mapDoors;
-    std::vector<SystemTypes__Enum> pinnedDoors;
+	Settings::ShowRadar = j["ShowRadar"].get<bool>();
+	Settings::ShowRadar_DeadBodies = j["ShowRadar_DeadBodies"].get<bool>();
+	Settings::ShowRadar_Ghosts = j["ShowRadar_Ghosts"].get<bool>();
+	Settings::ShowRadar_Impostors = j["ShowRadar_Impostors"].get<bool>();
+	Settings::ShowRadar_RightClick_Teleport = j["ShowRadar_RightClick_Teleport"].get<bool>();
+
+	Settings::ChatAlwaysActive = j["ChatAlwaysActive"].get<bool>();
+	Settings::ReadGhostMessages = j["ReadGhostMessages"].get<bool>();
+
+	Settings::AutoRepairLights = j["AutoRepairLights"].get<bool>();
+	Settings::AutoRepairReactor = j["AutoRepairReactor"].get<bool>();
+	Settings::AutoRepairOxygen = j["AutoRepairOxygen"].get<bool>();
+	Settings::AutoRepairComms = j["AutoRepairComms"].get<bool>();
+}
+
+void Settings::Save() {
+	json j = json{
+		{"ShowMenu", Settings::ShowMenu},
+
+		{"MaxVision", Settings::MaxVision},
+		{"UnlockVents", Settings::UnlockVents},
+
+		{"RevealImpostors", Settings::RevealImpostors},
+		{"NoKillTimer", Settings::NoKillTimer},
+
+		{"NoClip", Settings::NoClip},
+
+		{"ShowRadar", Settings::ShowRadar},
+		{"ShowRadar_DeadBodies", Settings::ShowRadar_DeadBodies},
+		{"ShowRadar_Ghosts", Settings::ShowRadar_Ghosts},
+		{"ShowRadar_Impostors", Settings::ShowRadar_Impostors},
+		{"ShowRadar_RightClick_Teleport", Settings::ShowRadar_RightClick_Teleport},
+
+		{"ChatAlwaysActive", Settings::ChatAlwaysActive},
+		{"ReadGhostMessages", Settings::ReadGhostMessages},
+
+		{"AutoRepairLights", Settings::AutoRepairLights},
+		{"AutoRepairReactor", Settings::AutoRepairReactor},
+		{"AutoRepairOxygen", Settings::AutoRepairOxygen},
+		{"AutoRepairComms", Settings::AutoRepairComms}
+	};
+
+	std::ofstream o(pSettings);
+	o << std::setw(4) << j << std::endl;
 }

@@ -21,7 +21,7 @@ ImVec4 AmongUsColorToImVec4(CorrectedColor32 color) {
 
 #define LocalInGame (((*Game::pAmongUsClient)->fields.GameMode == GameModes__Enum_LocalGame) && ((*Game::pAmongUsClient)->fields._.GameState == InnerNetClient_GameStates__Enum_Started))
 #define OnlineInGame (((*Game::pAmongUsClient)->fields.GameMode == GameModes__Enum_OnlineGame) && ((*Game::pAmongUsClient)->fields._.GameState == InnerNetClient_GameStates__Enum_Started))
-#define TutorialScene (State::CurrentScene.compare("Tutorial") == 0)
+#define TutorialScene (State.CurrentScene.compare("Tutorial") == 0)
 
 bool IsInGame() {
 	return (LocalInGame || OnlineInGame || TutorialScene) && (*Game::pShipStatus) && (*Game::pLocalPlayer);

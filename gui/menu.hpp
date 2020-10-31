@@ -9,7 +9,6 @@
 #include <iostream>
 #include <string>
 #include "state.hpp"
-#include "settings.hpp"
 #include "game.hpp"
 #include "utility.h"
 

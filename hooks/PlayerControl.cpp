@@ -11,7 +11,7 @@ void dPlayerControl_FixedUpdate(PlayerControl* __this, MethodInfo* method) {
 		if (!localData)
 			return;
 
-		if (State::RevealImpostors || localData->fields.IsImpostor)
+		if (State.RevealImpostors || localData->fields.IsImpostor)
 			nameText->fields.Color = playerData->fields.IsImpostor
 			? Palette__TypeInfo->static_fields->ImpostorRed
 			: Palette__TypeInfo->static_fields->White;
