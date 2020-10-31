@@ -21,38 +21,38 @@ private:
     inline bool Exists(const std::string& name);
 
 public:
-    bool ImGuiInitialized;
-    bool ShowMenu;
+    bool ImGuiInitialized = false;
+    bool ShowMenu = false;
 
     std::string CurrentScene;
 
-    bool MaxVision;
-    bool PlayerSpeed_Enabled;
-    float PlayerSpeed;
-    bool UnlockVents;
+    bool MaxVision = false;
+    bool PlayerSpeed_Enabled = false;
+    float PlayerSpeed = 1.f;
+    bool UnlockVents = false;
 
-    bool RevealImpostors;
-    bool NoKillTimer;
-    bool KillDistance_Enabled;
-    int KillDistance;
+    bool RevealImpostors = false;
+    bool NoKillTimer = false;
+    bool KillDistance_Enabled = false;
+    int KillDistance = 0;
 
-    bool NoClip;
+    bool NoClip = false;
 
-    uint8_t selectedPlayerId;
+    uint8_t selectedPlayerId = -1;
     std::queue<RPCInterface*> rpcQueue;
 
-    bool ShowRadar;
-    bool ShowRadar_DeadBodies;
-    bool ShowRadar_Ghosts;
-    bool ShowRadar_RightClick_Teleport;
+    bool ShowRadar = false;
+    bool ShowRadar_DeadBodies = false;
+    bool ShowRadar_Ghosts = false;
+    bool ShowRadar_RightClick_Teleport = false;
 
-    bool ChatAlwaysActive;
-    bool ReadGhostMessages;
+    bool ChatAlwaysActive = false;
+    bool ReadGhostMessages = false;
 
-    bool AutoRepairLights;
-    bool AutoRepairReactor;
-    bool AutoRepairOxygen;
-    bool AutoRepairComms;
+    bool AutoRepairLights = false;
+    bool AutoRepairReactor = false;
+    bool AutoRepairOxygen = false;
+    bool AutoRepairComms = false;
 
     SystemTypes__Enum selectedDoor;
     std::vector<SystemTypes__Enum> mapDoors;
