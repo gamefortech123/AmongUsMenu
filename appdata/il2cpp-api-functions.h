@@ -130,3 +130,6 @@ DO_API(const MethodInfo*, il2cpp_image_get_entry_point, (const Il2CppImage* imag
 
 DO_API(size_t, il2cpp_image_get_class_count, (const Il2CppImage* image));
 DO_API(const Il2CppClass*, il2cpp_image_get_class, (const Il2CppImage* image, size_t index));
+
+DO_API(void, il2cpp_gc_disable, ());
+DO_API(void, il2cpp_gc_enable, ());
