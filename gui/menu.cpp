@@ -28,7 +28,7 @@ namespace Menu {
 		if (!init)
 			Menu::Init();
 
-		ImGui::Begin("AmongUsMenu v2", &State.ShowMenu, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize);
+		ImGui::Begin("AmongUsMenu", &State.ShowMenu, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize);
 		ImGui::BeginTabBar("AmongUs#TopBar", ImGuiTabBarFlags_NoTabListScrollingButtons);
 
 		if (ImGui::BeginTabItem("Game")) {
