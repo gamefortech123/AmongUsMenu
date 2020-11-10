@@ -181,8 +181,6 @@ void DetourInitilization() {
 	if (DetourAttach(&(PVOID&)StatsManager_get_BanMinutesLeft, dStatsManager_get_BanMinutesLeft) != 0)
 		return;
 
-	// fails and returns
-	// returns obfuscated PetBehaviour__Array (check translations)
 	if (DetourAttach(&(PVOID&)HatManager_GetUnlockedPets, dHatManager_GetUnlockedPets) != 0)
 		return;
 
@@ -197,8 +195,6 @@ void DetourInitilization() {
 	if (DetourAttach(&(PVOID&)ChatBubble_SetName, dChatBubble_SetName) != 0)
 		return;
 
-	// fails and returns
-	// uses obfuscated playercontrol as first parameter (check translations)
 	if (DetourAttach(&(PVOID&)ChatController_AddChat, dChatController_AddChat) != 0)
 		return;
 
@@ -211,8 +207,6 @@ void DetourInitilization() {
 	if (DetourAttach(&(PVOID&)HqHudOverrideTask_FixedUpdate, dHqHudOverrideTask_FixedUpdate) != 0)
 		return;
 
-	// fails and returns
-	// uses obfuscated MapBehaviour as first parameter (check translations)
 	if (DetourAttach(&(PVOID&)HudManager_ShowMap, dHudManager_ShowMap) != 0)
 		return;
 

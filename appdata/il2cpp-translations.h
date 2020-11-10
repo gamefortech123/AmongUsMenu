@@ -15,7 +15,7 @@ const std::vector<std::pair<std::string, std::string>> CLASS_TRANSLATIONS = {
 	{ "CustomNetworkTransform", "HLNNOIPCILF" },
 	{ "InnerNetClient", "DNAFMCDBMCI" },
 	{ "NormalPlayerTask", "NOMAHIKEKPJ" },
-	{ "AmongUsClient", "BGPKMOIOMPP" },
+	{ "AmongUsClient", "JNFEHNLGIFF" },
 	{ "MeetingHud", "GPOHFPAIEMA" },
 	{ "Vent", "FBDDMHFBCPD" },
 	{ "AutoOpenDoor", "DKLABMEOEGK" },
@@ -26,9 +26,7 @@ const std::vector<std::pair<std::string, std::string>> CLASS_TRANSLATIONS = {
 	{ "HqHudOverrideTask", "GFBKIHICFNI" },
 	{ "HudOverrideTask", "MMPIJGKLMDC" },
 	{ "ReactorTask", "GEGADDFJJDD" },
-	{ "KeyboardJoystick", "IOCAEJCPCKG" },
-	{ "PetBehaviour", "LMKHONEJHGP" },
-	{ "MapBehaviour", "EFAGMLJDPOA" }
+	{ "KeyboardJoystick", "IOCAEJCPCKG" }
 };
 
 const std::vector<std::pair<std::string, std::string>> METHOD_TRANSLATIONS = {
@@ -41,5 +39,8 @@ const std::vector<std::pair<std::string, std::string>> METHOD_TRANSLATIONS = {
 const std::vector<std::pair<std::string, std::string>> TYPE_TRANSLATIONS = {
 	{ "GameData.PlayerInfo", "BAGGGBBOHOH.FGMBFCIIILC" },
 	{ "GameData.TaskInfo", "BAGGGBBOHOH.ALLADIFCEHO" },
-	{ "SystemTypes", "JBPEMAACAEP" }
+	{ "SystemTypes", "JBPEMAACAEP" },
+	{ "PetBehaviour", "LMKHONEJHGP" },
+	{ "MapBehaviour", "EFAGMLJDPOA" },
+	{ "PlayerControl", "GLHCHLEDNBA" }
 };
