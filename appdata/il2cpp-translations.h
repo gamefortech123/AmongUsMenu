@@ -3,20 +3,43 @@
 #include <string>
 
 const std::vector<std::pair<std::string, std::string>> CLASS_TRANSLATIONS = {
-	{ "Palette", "KMGFBENDNFO"},
-	{ "GameOptionsData", "OPIJAMILNFD"},
-	{ "StatsManager", "GKIGKLGEHCF"}
+	{ "Palette", "KPNJLIGHOEI" },
+	{ "GameOptionsData", "OEFJGMAEENB" },
+	{ "StatsManager", "PPNOJOGJGFL" },
+	{ "GameData", "BAGGGBBOHOH" },
+	{ "PlayerControl", "GLHCHLEDNBA" },
+	{ "HatManager", "JCEGHLBFDKF" },
+	{ "ShipStatus", "DAFPFFMKPJJ" },
+	{ "HudManager", "KLEKBPLEDOA" },
+	{ "ChatController", "MLINJDBIIEC" },
+	{ "CustomNetworkTransform", "HLNNOIPCILF" },
+	{ "InnerNetClient", "DNAFMCDBMCI" },
+	{ "NormalPlayerTask", "NOMAHIKEKPJ" },
+	{ "AmongUsClient", "BGPKMOIOMPP" },
+	{ "MeetingHud", "GPOHFPAIEMA" },
+	{ "Vent", "FBDDMHFBCPD" },
+	{ "AutoOpenDoor", "DKLABMEOEGK" },
+	{ "PlainDoor", "EEPJNHOLGOO" },
+	{ "ChatBubble", "NLMPPBGEPNL" },
+	{ "NoOxyTask", "ONEHEFFAELI" },
+	{ "ElectricTask", "BPJOMOEKJHI" },
+	{ "HqHudOverrideTask", "GFBKIHICFNI" },
+	{ "HudOverrideTask", "MMPIJGKLMDC" },
+	{ "ReactorTask", "GEGADDFJJDD" },
+	{ "KeyboardJoystick", "IOCAEJCPCKG" },
+	{ "PetBehaviour", "LMKHONEJHGP" },
+	{ "MapBehaviour", "EFAGMLJDPOA" }
 };
 
 const std::vector<std::pair<std::string, std::string>> METHOD_TRANSLATIONS = {
-	{ "get_BanMinutesLeft", "BLPOFKEGHHF"},
-	{ "get_AmBanned", "KNEICDPOIEJ"},
-	{ "get_BanPoints", "BBHFGOJBDKD"},
-	{ "OnStartGame", "GJEMMABJDBH"}
+	{ "get_BanMinutesLeft", "NEAALMKPALO" },
+	{ "get_AmBanned", "DNOKMILAMAE" },
+	{ "get_BanPoints", "MGKFDDLCGIE" },
+	{ "OnStartGame", "OOCKKGOMIEB" }
 };
 
 const std::vector<std::pair<std::string, std::string>> TYPE_TRANSLATIONS = {
-	{ "GameData.PlayerInfo", "GameData.IHEKEPMDGIJ"},
-	{ "GameData.TaskInfo", "GameData.CBOMPDNBEIF"},
-	{ "SystemTypes", "HBKFJKIHEFM"}
+	{ "GameData.PlayerInfo", "BAGGGBBOHOH.FGMBFCIIILC" },
+	{ "GameData.TaskInfo", "BAGGGBBOHOH.ALLADIFCEHO" },
+	{ "SystemTypes", "JBPEMAACAEP" }
 };
