@@ -187,8 +187,6 @@ void DetourInitilization() {
 	if (DetourAttach(&(PVOID&)HatManager_GetUnlockedSkins, dHatManager_GetUnlockedSkins) != 0)
 		return;
 
-	// fails and returns
-	// uses amongusclient as first parameter (check translations)
 	if (DetourAttach(&(PVOID&)AmongUsClient_OnStartGame, dAmongUsClient_OnStartGame) != 0)
 		return;
 
