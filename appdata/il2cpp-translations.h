@@ -42,5 +42,6 @@ const std::vector<std::pair<std::string, std::string>> TYPE_TRANSLATIONS = {
 	{ "SystemTypes", "JBPEMAACAEP" },
 	{ "PetBehaviour", "LMKHONEJHGP" },
 	{ "MapBehaviour", "EFAGMLJDPOA" },
-	{ "PlayerControl", "GLHCHLEDNBA" }
+	{ "PlayerControl", "GLHCHLEDNBA" },
+	{ "DeadBody", "FIGNMAOINPA" }
 };
