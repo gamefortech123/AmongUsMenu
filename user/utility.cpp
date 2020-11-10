@@ -106,8 +106,10 @@ std::vector<GameData_TaskInfo*> GetPlayerInfoTasks(GameData_PlayerInfo* playerIn
 std::vector<NormalPlayerTask*> GetPlayerTasks(PlayerControl* player) {
 	static PlayerTask* (*getItem)(List_1_PlayerTask_*, int32_t, MethodInfo*);
 	static int32_t(*getCount)(List_1_PlayerTask_*, MethodInfo*);
+	static std::string normalPlayerTask;
 	if (getItem == NULL) getItem = decltype(getItem)(find_method((Il2CppClass*)(Il2CppClass*)player->fields.myTasks->klass, "PlayerTask", "get_Item", "System.Int32"));
 	if (getCount == NULL) getCount = decltype(getCount)(find_method((Il2CppClass*)(Il2CppClass*)player->fields.myTasks->klass, "System.Int32", "get_Count", ""));
+	if (normalPlayerTask.empty()) normalPlayerTask = translate_type_name("NormalPlayerTask");
 
 	std::vector<PlayerTask*> playerTasks = std::vector<PlayerTask*>();
 	std::vector<NormalPlayerTask*> normalPlayerTasks = std::vector<NormalPlayerTask*>();
@@ -117,7 +119,7 @@ std::vector<NormalPlayerTask*> GetPlayerTasks(PlayerControl* player) {
 			playerTasks.push_back(getItem(player->fields.myTasks, i, NULL));
 
 	for (auto playerTask : playerTasks)
-		if (strcmp(playerTask->klass->_0.name, "NormalPlayerTask") == 0 || strcmp(playerTask->klass->_0.parent->name, "NormalPlayerTask") == 0)
+		if (strcmp(playerTask->klass->_0.name, normalPlayerTask.c_str()) == 0 || strcmp(playerTask->klass->_0.parent->name, normalPlayerTask.c_str()) == 0)
 			normalPlayerTasks.push_back((NormalPlayerTask*)playerTask);
 
 	return normalPlayerTasks;

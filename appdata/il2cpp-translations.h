@@ -45,5 +45,6 @@ const std::vector<std::pair<std::string, std::string>> TYPE_TRANSLATIONS = {
 	{ "MapBehaviour", "EFAGMLJDPOA" },
 	{ "PlayerControl", "GLHCHLEDNBA" },
 	{ "DeadBody", "FIGNMAOINPA" },
+	{ "NormalPlayerTask", "NOMAHIKEKPJ" },
 	{ "PlayerTask", "LOBBAHDOFGE" }
 };
