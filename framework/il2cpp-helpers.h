@@ -8,6 +8,7 @@ void new_console();
 std::string convert_from_string(Il2CppString* input);
 std::string convert_from_string(app::String* input);
 app::String* convert_to_string(std::string input);
+std::string translate_type_name(std::string input);
 Il2CppMethodPointer find_method(Il2CppClass* klass, std::string returnType, std::string methodName, std::string paramTypes);
 Il2CppMethodPointer get_method(std::string methodSignature);
 Il2CppClass* get_class(std::string classSignature);

@@ -79,7 +79,7 @@ std::vector<GameData_PlayerInfo*> GetAllPlayerData() {
 std::vector<DeadBody*> GetAllDeadBodies() {
 	std::vector<DeadBody*> deadBodies = std::vector<DeadBody*>();
 
-	Type* deadBody_Type = app::Type_GetType(convert_to_string("DeadBody, Assembly-CSharp"), NULL);
+	Type* deadBody_Type = app::Type_GetType(convert_to_string(translate_type_name("DeadBody, Assembly-CSharp")), NULL);
 	DeadBody__Array* deadBodyArray = (DeadBody__Array*)app::Object_1_FindObjectsOfType(deadBody_Type, NULL);
 
 	for (il2cpp_array_size_t i = 0; i < deadBodyArray->max_length; i++)
