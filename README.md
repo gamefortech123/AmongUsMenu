@@ -22,6 +22,11 @@ Will automatically be loaded by the Game itself if the dll is in the game direct
 - Debug_Xinput (With Debug Information and can be attached to process)
 - Release_Xinput (Optimized with all information stripped)
 
+## Screenshot
+<p align="center">
+   <img src="screenshot.png">
+</p>
+
 ## Credits
 * [void*](https://github.com/v0idp)
 * [std-nullptr](https://github.com/std-nullptr)
