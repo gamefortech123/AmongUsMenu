@@ -26,7 +26,8 @@ const std::vector<std::pair<std::string, std::string>> CLASS_TRANSLATIONS = {
 	{ "HqHudOverrideTask", "GFBKIHICFNI" },
 	{ "HudOverrideTask", "MMPIJGKLMDC" },
 	{ "ReactorTask", "GEGADDFJJDD" },
-	{ "KeyboardJoystick", "IOCAEJCPCKG" }
+	{ "KeyboardJoystick", "IOCAEJCPCKG" },
+	{ "DeadBody", "FIGNMAOINPA"}
 };
 
 const std::vector<std::pair<std::string, std::string>> METHOD_TRANSLATIONS = {
@@ -43,5 +44,6 @@ const std::vector<std::pair<std::string, std::string>> TYPE_TRANSLATIONS = {
 	{ "PetBehaviour", "LMKHONEJHGP" },
 	{ "MapBehaviour", "EFAGMLJDPOA" },
 	{ "PlayerControl", "GLHCHLEDNBA" },
-	{ "DeadBody", "FIGNMAOINPA" }
+	{ "DeadBody", "FIGNMAOINPA" },
+	{ "PlayerTask", "LOBBAHDOFGE" }
 };
